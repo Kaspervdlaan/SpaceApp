@@ -1,78 +1,41 @@
 import React from "react";
 import './App.css';
-import axios from "axios";
+import {Switch, Route} from "react-router-dom";
 
-
-// API endpoints
-const newsAPI = 'https://api.spaceflightnewsapi.net/v3/articles';
-const lauchAPI = 'https://ll.thespacedevs.com/2.2.0/launch/upcoming/';
-const issAPI = 'https://api.wheretheiss.at/v1/satellites/25544'
-
-// Space news API
-async function fetchNews () {
-    try {
-        const response = await axios.get(newsAPI)
-        const data = response.data.map((article) => ({
-            title: article.title,
-            site: article.newsSite,
-            date: article.publishedAt,
-            image: article.imageUrl,
-            description: article.summary,
-            url: article.url
-        }))
-        console.log(data)
-    }
-    catch (e) {
-        console.log(e)
-    }
-}
-
-// Launch API
-async function fetchLaunch () {
-    try {
-        const response = await axios.get(lauchAPI)
-        const data = response.data.results.map((launch) => ({
-            image: launch.image,
-            name: launch.name,
-            date: launch.net,
-            url: launch.url,
-            who: launch.launch_service_provider.name,
-            desc: launch.status.description
-        }))
-        console.log(data)
-    }
-    catch (e) {
-        console.log(e)
-    }
-}
-
-// ISS API
-async function fetchIss () {
-    try {
-        const response = await axios.get(issAPI)
-        const { altitude, latitude, longitude, velocity } = response.data
-        console.log({ altitude, latitude, longitude, velocity })
-    } catch (e) {
-        console.log(e)
-    }
-}
+import News from "./pages/news-page/News";
+import Launch from "./pages/launch-page/Launch";
+import Iss from "./pages/iss-page/Iss";
+import Header from "./components/header-component/Header";
+import Gallery from "./pages/gallery-page/Gallery";
+import Rover from "./pages/rover-page/Rover";
+import Footer from "./components/footer-component/Footer";
 
 function App() {
-    // SpaceNews API
-    fetchNews();
-    // Launch API
-    fetchLaunch();
-    // ISS API
-    fetchIss();
-
-
-
-
-  return (
-    <>
-
-    </>
-  );
+    return (
+        <>
+            <Header/>
+            <div className="outer-container">
+                <Switch>
+                    <Route exact path="/">
+                        <News/>
+                    </Route>
+                    <Route path="/launches">
+                        <Launch/>
+                    </Route>
+                    <Route path="/gallery">
+                        <Gallery/>
+                    </Route>
+                    <Route path="/iss">
+                        <Iss/>
+                    </Route>
+                    <Route path="/rover">
+                        <Rover/>
+                    </Route>
+                </Switch>
+            </div>
+            <Footer/>
+        </>
+    );
 }
 
 export default App;
