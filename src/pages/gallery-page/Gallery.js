@@ -41,11 +41,13 @@ function Gallery() {
                     type="search"
                     placeholder="Search the Universe..."
                 />
-                <button className={styles["search-button"]}></button>
-            </form>
-            {searchResult.length > 1 ? <div className="inner-container">
 
-                    {
+                    <button className={styles["search-button"]}></button>
+
+            </form>
+            {searchResult.length > 1 ?
+
+
                         searchResult.map((article) => {
                             return (
                                 <Article
@@ -58,15 +60,15 @@ function Gallery() {
                                 />
                             )
                         })
-                    }
 
 
-                </div> :
-                <div className="inner-container">
-                    <article className={styles["article-container"]}>
-                        <h4 className={styles["no-result"]}>No hits... Try again!</h4>
+
+                 :
+
+                    <article className="article-container">
+                        <h4 className={styles["no-result"]}>No data is found for: {searchQuery}</h4>
                     </article>
-                </div>}
+                }
         </>
     );
 }

@@ -17,6 +17,7 @@ header {
 
 .nav-container {
     background-color: var(--grey-background);
+    top: 45px;
     position: fixed;
     height: 100%;
     min-width: 200px;

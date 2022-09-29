@@ -17,7 +17,6 @@
 }
 
 .inner-container {
-    margin-top: 12px;
     flex-basis: 1000px;
 }
 
@@ -47,4 +46,6 @@
 .inner-container-footer {
     flex-basis: 1400px;
 }
+
+
 

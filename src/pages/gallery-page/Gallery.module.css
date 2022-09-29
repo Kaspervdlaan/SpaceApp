@@ -6,14 +6,13 @@
     border: 1px solid var(--grey-border);
     border-radius: 4px;
     margin-top: 12px;
-    min-width: 350px;
 }
 
 input {
     background-color: var(--grey-accent);
-    width: 95%;
     border-radius: 4px;
     padding: 5px;
+    width: 100%;
     border: 0;
     outline: none;
     color: var(--white-text);
@@ -34,16 +33,9 @@ input {
 .title-container {
     display: flex;
     justify-content: center;
+    margin-top: 12px;
 }
 
 .no-result {
     color: var(--red-accent);
 }
-
-/*.article-container {*/
-/*    background-color: var(--grey-background);*/
-/*    padding: 10px;*/
-/*    border: 1px solid var(--grey-border);*/
-/*    margin-bottom: 12px;*/
-/*    border-radius: 4px;*/
-/*}*/
