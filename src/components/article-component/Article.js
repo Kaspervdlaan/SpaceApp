@@ -1,8 +1,11 @@
 import React from 'react';
 import styles from './Article.module.css'
+import {Link, useParams} from "react-router-dom";
 
-function Article({number, source, date, title, image, desc}) {
+function Article({number, source, date, title, image, desc }) {
+
     return (
+        <Link to="/article:id">
         <article key={number} className={styles["article-container"]}>
             <div className={styles["date-source-container"]}>
                 <h4>{source}</h4>
@@ -17,6 +20,7 @@ function Article({number, source, date, title, image, desc}) {
                 <p>{desc}</p>
             </div>
         </article>
+        </Link>
     );
 }
 

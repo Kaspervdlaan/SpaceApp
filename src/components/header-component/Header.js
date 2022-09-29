@@ -31,7 +31,7 @@ function Header() {
                     <h4>🌌GalacticUniverse</h4>
                 </div>
 
-                <div className={styles["profile-container"]}><h2>👨‍🚀</h2></div>
+                <NavLink to="/login"><div className={styles["profile-container"]}><h2>👨‍🚀</h2></div></NavLink>
             </header>
 
             {menu === "show-menu" && <nav className={styles["nav-container"]}>

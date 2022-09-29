@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import styles from "./Rover.module.css"
-import Article from "../../components/article-component/Article";
 import RoverArticle from "../../components/rover-article-component/RoverArticle";
 
 
@@ -40,20 +39,17 @@ function Rover() {
 
     function submitForm(e) {
         e.preventDefault()
-        console.log('Form input: ', form)
         fetchRover()
     }
 
     return (
         <>
-            <div className="inner-container">
-
                 <form onSubmit={submitForm} className={styles["rover-form"]}>
                     <h3>Pick a Rover</h3>
                     <div className={styles["rover-container"]}>
-                        <input onChange={handleChange} checked={form.rover === 'perseverance'} type="radio" name="rover"
-                               value="perseverance"/>
-                        <label htmlFor="perseverance">Perseverance</label>
+                        {/*<input onChange={handleChange} checked={form.rover === 'perseverance'} type="radio" name="rover"*/}
+                        {/*       value="perseverance"/>*/}
+                        {/*<label htmlFor="perseverance">Perseverance</label>*/}
 
                         <input onChange={handleChange} checked={form.rover === 'curiosity'} type="radio" name="rover"
                                value="curiosity"/>
@@ -69,11 +65,17 @@ function Rover() {
                     </div>
 
                     <h3>Pick a Camera</h3>
+
                     <div className={styles["camera-container"]}>
                         <select onChange={handleChange} value={form.camera} name="camera">
-                            <option value="FHAZ">Front Hazard Avoidance Camera</option>
-                            <option value="RHAZ">Rear Hazard Avoidance Camera</option>
-                            <option value="NAVCAM">Navigation Camera</option>
+                            {(form.rover === 'curiosity' || form.rover === 'opportunity' || form.rover === 'spirit') && <option value="FHAZ">Front Hazard Avoidance Camera</option>}
+                            {(form.rover === 'curiosity' || form.rover === 'opportunity' || form.rover === 'spirit') && <option value="RHAZ">Rear Hazard Avoidance Camera</option>}
+                            {(form.rover === 'curiosity' || form.rover === 'opportunity' || form.rover === 'spirit') && <option value="NAVCAM">Navigation Camera</option>}
+                            {(form.rover === 'opportunity' || form.rover === 'spirit') && <option value="PANCAM">Panoramic Camera</option>}
+                            {(form.rover === 'opportunity' || form.rover === 'spirit') && <option value="MINITES">Miniature Thermal Emission Spectrometer</option>}
+                            {form.rover === 'curiosity' && <option value="MASTCAM">Mast Camera</option>}
+                            {form.rover === 'curiosity' && <option value="CHEMCAM">Chemistry and Camera Complex</option>}
+                            {form.rover === 'curiosity' && <option value="MAHLI">Mars Hand Lens Imager</option>}
                         </select>
                     </div>
                     <h3>Choose a Sol</h3>
@@ -96,7 +98,6 @@ function Rover() {
 
                 {/*<img src={roverImage[0]} alt=""/>*/}
 
-            </div>
         </>
     );
 }

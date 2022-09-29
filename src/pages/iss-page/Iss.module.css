@@ -1,13 +1,3 @@
-:root {
-    --black-background: #030303;
-    --grey-background: #1A1A1B;
-    --grey-accent: #272729;
-    --red-accent: #D1342F;
-    --grey-border: #343536;
-    --grey-border-hover: #818384;
-    --white-text: #D7DADC;
-}
-
 .article-container {
     background-color: var(--grey-background);
     padding: 10px;

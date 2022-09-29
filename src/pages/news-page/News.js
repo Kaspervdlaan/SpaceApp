@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import Iss from "../iss-page/Iss";
 import Article from "../../components/article-component/Article";
 
 function News() {
@@ -24,7 +23,6 @@ function News() {
 
     return (
         <>
-            <div className="inner-container">
                 {news.map((article) => {
                 return (
 
@@ -35,6 +33,7 @@ function News() {
                         title={article.title}
                         image={article.imageUrl}
                         desc={article.summary}
+                        url={article.url}
                     />
 
                     // <a target="_blank" key={article.title} href={article.url}>
@@ -57,8 +56,6 @@ function News() {
 
                 )
             })}
-                <Iss/>
-            </div>
         </>
     )
 }

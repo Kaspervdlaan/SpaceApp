@@ -5,7 +5,6 @@ import styles from "./Iss.module.css"
 function Iss() {
     const issAPI = 'https://api.wheretheiss.at/v1/satellites/25544'
     const [iss, setIss] = useState([]);
-    const [country, setCountry] = useState('');
 
 
     useEffect(() => {
@@ -25,8 +24,7 @@ function Iss() {
 
     return (
         <>
-            <div className="inner-container">
-                <a target="_blank"
+                <a target="_blank" rel="noreferrer"
                    href="https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/International_Space_Station/Where_is_the_International_Space_Station">
                     <article className={styles["article-container"]}>
                         <h3>Where is the international space station?</h3>
@@ -38,8 +36,6 @@ function Iss() {
                         <p>Velocity: {Math.round(iss.velocity)} km/h</p>
                     </article>
                 </a>
-
-            </div>
         </>
     );
 }

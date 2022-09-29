@@ -11,14 +11,40 @@
 .outer-container {
     margin: 0 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 .inner-container {
     margin-top: 12px;
-    max-width: 1000px;
+    flex-basis: 1000px;
 }
 
+.outer-container-header {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: center;
+     position: sticky;
+     top: 0;
+ }
 
+.inner-container-header {
+    flex-basis: 1400px;
+}
+
+.outer-container-footer {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.inner-container-footer {
+    flex-basis: 1400px;
+}
 

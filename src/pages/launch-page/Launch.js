@@ -29,7 +29,6 @@ function Launch() {
 
     return (
         <>
-            <div className="inner-container">
             {launch.map((article) => {
                 return (
                     <Article
@@ -42,7 +41,6 @@ function Launch() {
                     />
                 )
             })}
-            </div>
         </>
     );
 }
