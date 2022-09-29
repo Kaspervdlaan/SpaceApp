@@ -1,0 +1,46 @@
+header {
+    background-color: var(--grey-background);
+    border-bottom: 1px solid var(--grey-border);
+    padding: 6px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.hamburger-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav-container {
+    background-color: var(--grey-background);
+    top: 45px;
+    position: fixed;
+    height: 100%;
+    min-width: 200px;
+    width: 20%;
+    border-right: 1px solid var(--grey-border);
+    padding: 12px;
+}
+
+.show-menu {
+    display: flex;
+}
+
+.hide-menu {
+    display: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+li {
+    border-bottom: 1px solid var(--grey-border);
+    padding-bottom: 12px;
+}

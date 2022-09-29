@@ -1,0 +1,13 @@
+.article-container {
+    background-color: var(--grey-background);
+    padding: 10px;
+    border: 1px solid var(--grey-border);
+    margin-bottom: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.article-container:hover {
+    border: 1px solid var(--grey-border-hover);
+}

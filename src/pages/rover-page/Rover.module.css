@@ -1,0 +1,50 @@
+.rover-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--grey-background);
+    border-radius: 5px;
+    border: 1px solid var(--grey-border);
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+input {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.rover-container {
+    display: flex;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.camera-container {
+    margin-bottom: 12px;
+}
+
+.sol-container {
+    margin-bottom: 12px;
+}
+
+.rover-button {
+    margin-bottom: 12px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 12px;
+
+    background-color: var(--grey-background);
+    padding: 10px;
+    border: 1px solid var(--grey-border);
+    border-radius: 4px;
+}
+
+.no-result {
+    color: var(--red-accent);
+}
