@@ -15,7 +15,7 @@ function Article({number, source, date, title, image, desc }) {
                 <img className={styles["pictures"]} src={image} alt={title}/>
             </picture>
             <div className={styles["desc-container"]}>
-                {desc.length < 1000 && <p>{desc}</p>}
+                {desc.length < 700 && <p>{desc}</p>}
             </div>
         </article>
     );
