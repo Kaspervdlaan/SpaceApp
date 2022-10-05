@@ -32,7 +32,7 @@ function Gallery() {
     return (
         <>
             <div className={styles["title-container"]}>
-                <h2>Search the NASA picture database!</h2>
+                <h3>Search the NASA picture database!</h3>
             </div>
             <form className={styles["search-form"]} onSubmit={submitSearch}>
 

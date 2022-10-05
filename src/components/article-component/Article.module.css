@@ -17,6 +17,9 @@
 }
 
 picture img {
-    max-width: 600px;
+    max-width: 450px;
 }
 
+.article-container h3 {
+    margin-bottom: 6px;
+}

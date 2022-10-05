@@ -13,7 +13,6 @@ import Item from "./pages/item-page/Item";
 import Footer from "./components/footer-component/Footer";
 import Header from "./components/header-component/Header";
 
-
 function App() {
     return (
         <>

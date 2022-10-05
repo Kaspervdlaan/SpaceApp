@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Article from "../../components/article-component/Article";
+import TopNav from "../../components/topnav-component/TopNav";
 
 function News() {
     const newsAPI = 'https://api.spaceflightnewsapi.net/v3/articles';
@@ -23,6 +24,7 @@ function News() {
 
     return (
         <>
+            <TopNav/>
                 {news.map((article) => {
                 return (
 

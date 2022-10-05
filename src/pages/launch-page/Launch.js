@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import Article from "../../components/article-component/Article";
+import TopNav from "../../components/topnav-component/TopNav";
 
 function Launch() {
     const launchAPI = 'https://ll.thespacedevs.com/2.2.0/launch/upcoming/';
@@ -29,6 +30,7 @@ function Launch() {
 
     return (
         <>
+            <TopNav/>
             {launch.map((article) => {
                 return (
                     <Article
