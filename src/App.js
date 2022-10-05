@@ -8,7 +8,7 @@ import Iss from "./pages/iss-page/Iss";
 import Gallery from "./pages/gallery-page/Gallery";
 import Rover from "./pages/rover-page/Rover";
 import Login from "./pages/login-page/Login";
-import ArticleItem from "./pages/article-page/ArticleItem";
+import Item from "./pages/item-page/Item";
 
 import Footer from "./components/footer-component/Footer";
 import Header from "./components/header-component/Header";
@@ -31,9 +31,6 @@ function App() {
                         <Route path="/launches">
                             <Launch/>
                         </Route>
-                        <Route path="/article">
-                            <ArticleItem/>
-                        </Route>
                         <Route path="/gallery">
                             <Gallery/>
                         </Route>
@@ -45,6 +42,9 @@ function App() {
                         </Route>
                         <Route path="/login">
                             <Login/>
+                        </Route>
+                        <Route path="/item/:id">
+                            <Item/>
                         </Route>
                     </Switch>
                 </div>

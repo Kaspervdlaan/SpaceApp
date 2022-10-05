@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import Article from "../../components/article-component/Article";
 import styles from "./Gallery.module.css"
+import {Link} from "react-router-dom";
 
 function Gallery() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -50,6 +51,7 @@ function Gallery() {
 
                         searchResult.map((article) => {
                             return (
+                                <Link to={`/item/${article.data[0].nasa_id}`}>
                                 <Article
                                     number={article.links[0].href}
                                     source={article.data[0].secondary_creator}
@@ -58,6 +60,7 @@ function Gallery() {
                                     image={article.links[0].href}
                                     desc={article.data[0].description}
                                 />
+                        </Link>
                             )
                         })
 
