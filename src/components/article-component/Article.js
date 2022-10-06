@@ -1,13 +1,20 @@
 import React from 'react';
-import styles from './Article.module.css'
+import styles from './Article.module.css';
 
-function Article({number, source, date, title, image, desc }) {
+
+function Article({number, source, date, title, image, desc, photographer }) {
 
     return (
         <article key={number} className={styles["article-container"]}>
             <div className={styles["date-source-container"]}>
-                <h4>{source}</h4>
-                <h5>{date}</h5>
+                <div>
+                    <h3>📰</h3>
+                </div>
+
+                <div>
+                    <h4>{source}{photographer}</h4>
+                    <h5>{date}</h5>
+                </div>
             </div>
             <div className={styles["title-container"]}></div>
             <h3>{title}</h3>

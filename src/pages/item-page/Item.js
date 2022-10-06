@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import axios from "axios";
 import styles from "../../components/article-component/Article.module.css";
-import Article from "../../components/article-component/Article";
+
 
 function Item() {
     const { id } = useParams();
@@ -31,15 +31,6 @@ function Item() {
 
     return (
         <>
-            {/*<Article*/}
-            {/*    number={article.links[0].href}*/}
-            {/*    source={article.data[0].secondary_creator}*/}
-            {/*    date={article.data[0].date_created}*/}
-            {/*    title={article.data[0].title}*/}
-            {/*    image={article.links[0].href}*/}
-            {/*    desc={article.data[0].description}*/}
-            {/*/>*/}
-
             <article key={id} className={styles["article-container"]}>
                 <div className={styles["date-source-container"]}>
                     <h4>{idResult.secondary_creator}</h4>

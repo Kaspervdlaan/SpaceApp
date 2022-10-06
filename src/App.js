@@ -33,6 +33,9 @@ function App() {
                         <Route path="/gallery">
                             <Gallery/>
                         </Route>
+                        <Route path="/item/:id">
+                            <Item/>
+                        </Route>
                         <Route path="/iss">
                             <Iss/>
                         </Route>
@@ -42,9 +45,7 @@ function App() {
                         <Route path="/login">
                             <Login/>
                         </Route>
-                        <Route path="/item/:id">
-                            <Item/>
-                        </Route>
+
                     </Switch>
                 </div>
             </div>

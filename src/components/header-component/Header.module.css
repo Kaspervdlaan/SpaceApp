@@ -26,6 +26,10 @@ header {
     padding: 12px;
 }
 
+.nav-container ul li:hover {
+    color: var(--red-accent);
+}
+
 .show-menu {
     display: flex;
 }

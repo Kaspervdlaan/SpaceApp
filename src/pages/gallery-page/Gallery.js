@@ -54,6 +54,7 @@ function Gallery() {
                                 <Link to={`/item/${article.data[0].nasa_id}`}>
                                 <Article
                                     number={article.links[0].href}
+                                    photographer={article.data[0].photographer}
                                     source={article.data[0].secondary_creator}
                                     date={article.data[0].date_created}
                                     title={article.data[0].title}

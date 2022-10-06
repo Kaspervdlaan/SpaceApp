@@ -34,7 +34,7 @@ function Header() {
                 <NavLink to="/login"><div className={styles["profile-container"]}><h2>👨‍🚀</h2></div></NavLink>
             </header>
 
-            {menu === "show-menu" && <nav className={styles["nav-container"]}>
+            {menu === "show-menu" && <nav onMouseLeave={toggleMenu} className={styles["nav-container"]}>
                 <ul>
                     <NavLink onClick={toggleMenu} activeClassName={styles["active-menu"]} to="/">
                         <li>SpaceNews</li>
