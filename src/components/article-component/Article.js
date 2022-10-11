@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Article.module.css';
 
 
-function Article({number, source, date, title, image, desc, photographer }) {
+function Article({number, source, date, title, image, desc, photographer}) {
 
     return (
         <article key={number} className={styles["article-container"]}>

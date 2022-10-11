@@ -26,8 +26,6 @@ function Item() {
             console.log(e)
         }
     }
-    {
-        console.log(idResult.title)}
 
     return (
         <>

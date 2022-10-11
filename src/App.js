@@ -9,6 +9,7 @@ import Gallery from "./pages/gallery-page/Gallery";
 import Rover from "./pages/rover-page/Rover";
 import Login from "./pages/login-page/Login";
 import Item from "./pages/item-page/Item";
+import Live from "./pages/live-page/Live";
 
 import Footer from "./components/footer-component/Footer";
 import Header from "./components/header-component/Header";
@@ -44,6 +45,9 @@ function App() {
                         </Route>
                         <Route path="/login">
                             <Login/>
+                        </Route>
+                        <Route path="/live">
+                            <Live/>
                         </Route>
 
                     </Switch>

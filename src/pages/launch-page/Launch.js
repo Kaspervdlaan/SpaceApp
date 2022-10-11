@@ -13,15 +13,16 @@ function Launch() {
         async function fetchLaunch() {
             try {
                 const response = await axios.get(launchAPI)
-        const data = response.data.results.map((launch) => ({
-            image: launch.image,
-            name: launch.name,
-            date: launch.net,
-            url: launch.url,
-            who: launch.launch_service_provider.name,
-            desc: launch.status.description
-        }))
+                const data = response.data.results.map((launch) => ({
+                    image: launch.image,
+                    name: launch.name,
+                    date: launch.net,
+                    url: launch.url,
+                    who: launch.launch_service_provider.name,
+                    desc: launch.status.description
+                }))
                 setLaunch(data)
+                console.log(response)
             } catch (e) {
                 console.log(e)
             }
@@ -34,13 +35,13 @@ function Launch() {
             {launch.map((article) => {
                 return (
                     <Article
-                        number={article.name}
-                        source={article.who}
-                        date={article.date}
-                        title={article.name}
-                        image={article.image}
-                        desc={article.desc}
-                    />
+                            number={article.name}
+                            source={article.who}
+                            date={article.date}
+                            title={article.name}
+                            image={article.image}
+                            desc={article.desc}
+                        />
                 )
             })}
         </>

@@ -51,6 +51,9 @@ function Header() {
                     <NavLink onClick={toggleMenu} activeClassName={styles["active-menu"]} to="/iss">
                         <li>Where's the ISS?</li>
                     </NavLink>
+                    <NavLink onClick={toggleMenu} activeClassName={styles["active-menu"]} to="/live">
+                        <li>Watch NASA Live</li>
+                    </NavLink>
                 </ul>
             </nav>}
         </>
