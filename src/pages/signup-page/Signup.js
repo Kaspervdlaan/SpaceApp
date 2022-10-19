@@ -2,10 +2,13 @@ import React from 'react';
 import axios from "axios";
 import {useForm} from "react-hook-form";
 import TopNav from "../../components/topnav-component/TopNav";
+import styles from "../gallery-page/Gallery.module.css";
+import {useHistory} from "react-router-dom";
 
 function Signup() {
     const {register, handleSubmit} = useForm();
     const BASE_URI = `https://frontend-educational-backend.herokuapp.com/api/auth/signup`
+    const history = useHistory()
 
     async function onFormSubmit(data) {
         try {
@@ -15,10 +18,11 @@ function Signup() {
                 password: data.password,
                 role: ["user"]
             })
-
+            history.push("/login")
 
         } catch (e) {
             console.error(e)
+            alert(e.response.status)
         }
 
 
@@ -29,11 +33,16 @@ function Signup() {
     return (
         <>
             <TopNav/>
+            <div className={styles["title-container"]}>
+                <h3>Enter your credentials</h3>
+            </div>
             <form className="auth-form" onSubmit={handleSubmit(onFormSubmit)}>
+
                 <label htmlFor="user-email">
                     Email:
                     <input
                         type="email"
+                        placeholder="user@email.com"
                         id="user-email"
                         {...register("email", {
                             required: true,
@@ -47,6 +56,7 @@ function Signup() {
                     Username:
                     <input
                         type="text"
+                        placeholder="username"
                         id="username"
                         {...register("username", {
                             required: true,
@@ -59,6 +69,7 @@ function Signup() {
                     Password:
                     <input
                         type="password"
+                        placeholder="password"
                         id="password"
                         {...register("password", {
                             required: true,

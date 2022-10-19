@@ -29,7 +29,7 @@ function Header() {
                     </svg>
                 </div>
 
-                <div>
+                <div className={styles["logo-container"]}>
                     <h4>🌌GalacticUniverse</h4>
                 </div>
 

@@ -18,9 +18,9 @@ function Article({number, source, date, title, image, desc, photographer}) {
             </div>
             <div className={styles["title-container"]}></div>
             <h3>{title}</h3>
-            <picture className={styles["picture-container"]}>
+            {image && <picture className={styles["picture-container"]}>
                 <img className={styles["pictures"]} src={image} alt={title}/>
-            </picture>
+            </picture>}
             <div className={styles["desc-container"]}>
                 {desc.length < 700 && <p>{desc}</p>}
             </div>

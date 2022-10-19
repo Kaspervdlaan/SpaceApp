@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import {AuthContext} from "../../context/AuthContext";
 import TopNav from "../../components/topnav-component/TopNav";
+import Article from "../../components/article-component/Article";
 
 function Profile() {
     const { auth } = useContext(AuthContext)
@@ -8,9 +9,11 @@ function Profile() {
     return (
         <>
             <TopNav/>
-            <h1>profile page</h1>
-            <h3>de user is: {auth.username}</h3>
-            <h3>user is: {auth.isAuth ? 'authorised' : 'unauthorised'}</h3>
+            <Article
+                date="User Profile"
+                title= {auth.username}
+                desc= {auth.isAuth ? "User is: Authorised" : "user is Unauthorised"}
+            />
         </>
     );
 }
