@@ -37,6 +37,7 @@ function Gallery() {
             <form className={styles["search-form"]} onSubmit={submitSearch}>
 
                 <input
+                    className={styles["search-input"]}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     value={searchQuery}
                     type="search"

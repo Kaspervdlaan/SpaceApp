@@ -36,7 +36,7 @@ function Header() {
                 <NavLink to="/profile">
                     <div className={styles["profile-container"]}>
                         {auth.isAuth && auth.username}
-                        {auth.isAuth && <button type="button" onClick={logoutFunction}>Log out</button>}
+                        {auth.isAuth && <button type="button" className="auth-button" onClick={logoutFunction}>Log out</button>}
                         <h2>👨‍🚀</h2>
                     </div>
                 </NavLink>

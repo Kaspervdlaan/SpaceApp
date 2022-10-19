@@ -52,3 +52,37 @@
     justify-content: center;
     margin-top: 12px;
 }
+
+.auth-form input {
+    margin-left: 0;
+    background-color: var(--grey-accent);
+    margin-bottom: 6px;
+}
+
+.auth-form input:active {
+    background-color: var(--grey-accent);
+}
+
+.auth-button {
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--grey-accent);
+    color: var(--grey-border-hover);
+    border: 1px solid var(--grey-border);
+}
+
+.auth-button:hover {
+    color: var(--red-accent);
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-container-register {
+    display: flex;
+    justify-content: flex-end;
+}
+
