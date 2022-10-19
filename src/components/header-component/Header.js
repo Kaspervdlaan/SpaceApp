@@ -4,7 +4,7 @@ import styles from './Header.module.css'
 import {AuthContext} from "../../context/AuthContext";
 
 function Header() {
-    const {auth, logoutFunction} = useContext(AuthContext)
+    const {auth, logoutFunction, username} = useContext(AuthContext)
     const [menu, setMenu] = useState("hide-menu")
 
     function toggleMenu() {
@@ -35,6 +35,7 @@ function Header() {
 
                 <NavLink to="/profile">
                     <div className={styles["profile-container"]}>
+                        {auth.isAuth && auth.username}
                         {auth.isAuth && <button type="button" onClick={logoutFunction}>Log out</button>}
                         <h2>👨‍🚀</h2>
                     </div>

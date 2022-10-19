@@ -6,23 +6,20 @@ export const AuthContext = createContext({});
 function AuthContextProvider({ children }) {
     const [auth, toggleAuth] = useState({
         isAuth: false,
-        user: null,
-
+        username: null,
     })
 
     const history = useHistory();
 
-    function login(token) {
+    function login(token, user) {
         console.log(token);
-
+        console.log(user)
         localStorage.setItem('token', token);
-
-
-
 
         toggleAuth({
             ...auth,
             isAuth: true,
+            username: user,
         });
         console.log("user ingelogd");
         history.push("/profile")
@@ -32,7 +29,7 @@ function AuthContextProvider({ children }) {
         toggleAuth({
             ...auth,
             isAuth: false,
-            user: null,
+            username: null,
         });
         console.log("user uigelogd");
         history.push("/")
@@ -40,6 +37,7 @@ function AuthContextProvider({ children }) {
 
     const contextData = {
         auth: auth,
+        authFunction: toggleAuth,
         loginFunction: login,
         logoutFunction: logout,
     }
