@@ -7,13 +7,11 @@ function AuthContextProvider({ children }) {
     const [auth, toggleAuth] = useState({
         isAuth: false,
         username: null,
-    })
-
+    });
     const history = useHistory();
 
     function login(token, user) {
         console.log(token);
-        console.log(user)
         localStorage.setItem('token', token);
 
         toggleAuth({

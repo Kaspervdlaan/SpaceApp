@@ -65,11 +65,7 @@ function Gallery() {
                         </Link>
                             )
                         })
-
-
-
                  :
-
                     <article className="article-container">
                         <h4 className={styles["no-result"]}>No data is found for: {searchQuery}</h4>
                     </article>

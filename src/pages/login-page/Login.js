@@ -21,7 +21,10 @@ function Login() {
 
         } catch (e) {
             console.error(e);
-            alert(e.response.status)
+            if (e.response.status === 401) {
+                alert("Credentials dont match, try again.")
+            }
+
         }
     }
 

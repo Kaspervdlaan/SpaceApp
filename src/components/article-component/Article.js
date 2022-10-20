@@ -10,14 +10,13 @@ function Article({number, source, date, title, image, desc, photographer}) {
                 <div>
                     <h3>📰</h3>
                 </div>
-
                 <div>
-                    <h4>{source}{photographer}</h4>
+                     <h4>{source}</h4>
                     <h5>{date}</h5>
                 </div>
             </div>
-            <div className={styles["title-container"]}></div>
-            <h3>{title}</h3>
+            <div className={styles["title-container"]}><h3>{title}</h3></div>
+
             {image && <picture className={styles["picture-container"]}>
                 <img className={styles["pictures"]} src={image} alt={title}/>
             </picture>}

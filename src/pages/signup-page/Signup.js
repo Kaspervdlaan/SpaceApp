@@ -22,7 +22,7 @@ function Signup() {
 
         } catch (e) {
             console.error(e)
-            alert(e.response.status)
+            alert(e.response.data.message)
         }
 
 
