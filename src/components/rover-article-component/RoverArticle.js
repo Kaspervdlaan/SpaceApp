@@ -6,7 +6,7 @@ function RoverArticle({ image }) {
     return (
             <article className={styles["rover-article"]}>
                     <picture className={styles["rover-picture-container"]}>
-                        <img src={image} alt=""/>
+                        <img className={styles["rover-picture"]} src={image} alt=""/>
                     </picture>
             </article>
     );

@@ -53,10 +53,7 @@ function App() {
                         </Route>
 
                         <Route path="/profile">
-                            {console.log(auth)}
-                            {/*{auth.isAuth ? */}
-                                <Profile/>
-                                {/*// : <Redirect to="/login" />}*/}
+                            {auth.isAuth ? <Profile/> : <Redirect to="/login" />}
                         </Route>
                         <Route path="/signup">
                             <Signup/>

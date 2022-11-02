@@ -46,12 +46,8 @@ function Rover() {
     return (
         <>
             <form onSubmit={submitForm} className={styles["rover-form"]}>
-                <h3>Pick a Rover</h3>
+                <h3 className={styles["rover-pick"]}>Pick a Rover</h3>
                 <div className={styles["rover-container"]}>
-                    {/*<input onChange={handleChange} checked={form.rover === 'perseverance'} type="radio" name="rover"*/}
-                    {/*       value="perseverance"/>*/}
-                    {/*<label htmlFor="perseverance">Perseverance</label>*/}
-
                     <input onChange={handleChange} checked={form.rover === 'curiosity'} type="radio" name="rover"
                            value="curiosity"/>
                     <label htmlFor="curiosity">Curiosity</label>

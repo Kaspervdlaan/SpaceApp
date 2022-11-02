@@ -17,7 +17,7 @@ function Login() {
                 username: data.username,
                 password: data.password,
             });
-            loginFunction(response.data.accessToken, data.username)
+            loginFunction(response.data.accessToken)
 
         } catch (e) {
             console.error(e);
