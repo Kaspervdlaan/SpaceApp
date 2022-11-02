@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import styles from "./Iss.module.css"
+import TopNav from "../../components/topnav-component/TopNav";
 
 function Iss() {
     const issAPI = 'https://api.wheretheiss.at/v1/satellites/25544'
@@ -24,11 +25,12 @@ function Iss() {
 
     return (
         <>
+            <TopNav/>
                 <a target="_blank" rel="noreferrer"
                    href="https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/International_Space_Station/Where_is_the_International_Space_Station">
                     <article className={styles["article-container"]}>
                         <h3>Where is the international space station?</h3>
-                        <picture><img src="https://www.tudelftcampus.nl/wp-content/uploads/2021/01/space-station.jpg"
+                        <picture><img className={styles["iss-picture"]} src="https://www.tudelftcampus.nl/wp-content/uploads/2021/01/space-station.jpg"
                                       alt=""/></picture>
                         <p>Latitude: {Math.round(iss.latitude)}°</p>
                         <p>Longitude: {Math.round(iss.longitude)}°</p>

@@ -8,3 +8,9 @@ footer {
     align-items: center;
     filter: drop-shadow(0 -4mm 4mm var(--black-background));
 }
+
+@media screen and (min-width: 1000px) {
+    footer {
+        display: none;
+    }
+}

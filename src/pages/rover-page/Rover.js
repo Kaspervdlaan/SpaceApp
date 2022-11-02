@@ -28,9 +28,10 @@ function Rover() {
         try {
             const response = await axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/${form.rover}/photos?api_key=yYN7fKH547MMckYy51i7HqeQpuR6bAYBeZr85wu1&sol=${form.sol}&camera=${form.camera}`)
             const data = response.data.photos.map((photo) => ({
-                image: photo.img_src
+                image: photo.img_src,
             }))
             setRoverImage(data)
+            console.log(data)
         } catch (e) {
             console.log(e)
         }
@@ -45,12 +46,8 @@ function Rover() {
     return (
         <>
             <form onSubmit={submitForm} className={styles["rover-form"]}>
-                <h3>Pick a Rover</h3>
+                <h3 className={styles["rover-pick"]}>Pick a Rover</h3>
                 <div className={styles["rover-container"]}>
-                    {/*<input onChange={handleChange} checked={form.rover === 'perseverance'} type="radio" name="rover"*/}
-                    {/*       value="perseverance"/>*/}
-                    {/*<label htmlFor="perseverance">Perseverance</label>*/}
-
                     <input onChange={handleChange} checked={form.rover === 'curiosity'} type="radio" name="rover"
                            value="curiosity"/>
                     <label htmlFor="curiosity">Curiosity</label>
@@ -95,9 +92,9 @@ function Rover() {
 
                     {roverImage.map((article) => {
                         return (
-
-                            <RoverArticle image={article.image}/>
-
+                            <a target="_blank" rel="noreferrer" href={article.image}>
+                                <RoverArticle image={article.image}/>
+                            </a>
                         )
                     })}
                 </div> :

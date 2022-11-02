@@ -9,10 +9,19 @@
     margin-top: 12px;
 }
 
+.rover-pick {
+    margin-top: 6px;
+}
+
 input {
     margin-left: 10px;
     margin-right: 5px;
 }
+
+select, option {
+    color: var(--grey-background);
+}
+
 
 .rover-container {
     display: flex;
@@ -30,6 +39,16 @@ input {
 
 .rover-button {
     margin-bottom: 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--grey-accent);
+    color: var(--grey-border-hover);
+    border: 1px solid var(--grey-border);
+}
+
+.rover-button:hover {
+    color: var(--red-accent);
 }
 
 .gallery-container {
@@ -43,8 +62,10 @@ input {
     padding: 10px;
     border: 1px solid var(--grey-border);
     border-radius: 4px;
+    max-width: 100vw;
 }
 
 .no-result {
     color: var(--red-accent);
 }
+

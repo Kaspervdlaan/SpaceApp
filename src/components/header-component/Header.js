@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {NavLink} from "react-router-dom";
 import styles from './Header.module.css'
+import {AuthContext} from "../../context/AuthContext";
 
 function Header() {
+    const {auth, logoutFunction, username} = useContext(AuthContext)
     const [menu, setMenu] = useState("hide-menu")
 
     function toggleMenu() {
@@ -27,14 +29,20 @@ function Header() {
                     </svg>
                 </div>
 
-                <div>
+                <div className={styles["logo-container"]}>
                     <h4>🌌GalacticUniverse</h4>
                 </div>
 
-                <NavLink to="/login"><div className={styles["profile-container"]}><h2>👨‍🚀</h2></div></NavLink>
+                <NavLink to="/profile">
+                    <div className={styles["profile-container"]}>
+                        {auth.isAuth && auth.username}
+                        {auth.isAuth && <button type="button" className="auth-button" onClick={logoutFunction}>Log out</button>}
+                        <h2>👨‍🚀</h2>
+                    </div>
+                </NavLink>
             </header>
 
-            {menu === "show-menu" && <nav className={styles["nav-container"]}>
+            {menu === "show-menu" && <nav onMouseLeave={toggleMenu} className={styles["nav-container"]}>
                 <ul>
                     <NavLink onClick={toggleMenu} activeClassName={styles["active-menu"]} to="/">
                         <li>SpaceNews</li>
@@ -50,6 +58,9 @@ function Header() {
                     </NavLink>
                     <NavLink onClick={toggleMenu} activeClassName={styles["active-menu"]} to="/iss">
                         <li>Where's the ISS?</li>
+                    </NavLink>
+                    <NavLink onClick={toggleMenu} activeClassName={styles["active-menu"]} to="/live">
+                        <li>Watch NASA Live</li>
                     </NavLink>
                 </ul>
             </nav>}

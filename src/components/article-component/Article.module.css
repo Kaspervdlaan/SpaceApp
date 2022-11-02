@@ -6,6 +6,8 @@
     margin-top: 12px;
     border-radius: 4px;
     cursor: pointer;
+    max-width: 100vw;
+    overflow: hidden;
 }
 
 .article-container:hover {
@@ -17,6 +19,16 @@
 }
 
 picture img {
-    max-width: 400px;
+    max-width: 450px;
+}
+
+.article-container h3 {
+    margin-bottom: 6px;
+}
+
+.date-source-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
